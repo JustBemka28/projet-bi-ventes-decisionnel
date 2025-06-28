@@ -1,0 +1,8 @@
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\bin\Model.asdatabase
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\bin\Model.deploymenttargets
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\bin\Model.deploymentoptions
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\obj\Development\testTabulaire.smproj.AssemblyReference.cache
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\obj\Development\testTabulaire.smproj.CoreCompileInputs.cache
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\obj\Development\Model.asdatabase
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\obj\Development\Model.deploymentoptions
+C:\Users\skace\source\repos\testTabulaire\testTabulaire\obj\Development\Model.deploymenttargets

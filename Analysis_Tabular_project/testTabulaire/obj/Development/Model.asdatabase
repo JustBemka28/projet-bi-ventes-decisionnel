@@ -1,0 +1,483 @@
+{
+  "name": "testTabulaire",
+  "compatibilityLevel": 1200,
+  "model": {
+    "name": "Modèle",
+    "culture": "fr-FR",
+    "dataSources": [
+      {
+        "name": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas",
+        "connectionString": "Provider=SQLOLEDB;Data Source=JUST_BEMKA\\JUST_BEMKA;Initial Catalog=test_ssas;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "skace",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_Client",
+        "columns": [
+          {
+            "name": "id_client",
+            "dataType": "string",
+            "sourceColumn": "id_client",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "nom_client",
+            "dataType": "string",
+            "sourceColumn": "nom_client",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "segment_client",
+            "dataType": "string",
+            "sourceColumn": "segment_client",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "id_lieu",
+            "dataType": "int64",
+            "sourceColumn": "id_lieu",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Client",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Client].*   FROM [dbo].[Dim_Client] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Client].*   FROM [dbo].[Dim_Client] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Client"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Commande",
+        "columns": [
+          {
+            "name": "id_commande",
+            "dataType": "string",
+            "sourceColumn": "id_commande",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "date_commande",
+            "dataType": "string",
+            "sourceColumn": "date_commande",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "date_expedition",
+            "dataType": "string",
+            "sourceColumn": "date_expedition",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "mode_livraison",
+            "dataType": "string",
+            "sourceColumn": "mode_livraison",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Délai_Livraison",
+            "dataType": "int64",
+            "sourceColumn": "Délai_Livraison",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Commande",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Commande].*   FROM [dbo].[Dim_Commande] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Commande].*   FROM [dbo].[Dim_Commande] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Commande"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Lieu",
+        "columns": [
+          {
+            "name": "pays",
+            "dataType": "string",
+            "sourceColumn": "pays",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ville",
+            "dataType": "string",
+            "sourceColumn": "ville",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "etat",
+            "dataType": "string",
+            "sourceColumn": "etat",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "region",
+            "dataType": "string",
+            "sourceColumn": "region",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "id_lieu",
+            "dataType": "int64",
+            "sourceColumn": "id_lieu",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Lieu",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Lieu].*   FROM [dbo].[Dim_Lieu] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Lieu].*   FROM [dbo].[Dim_Lieu] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Lieu"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Produit",
+        "columns": [
+          {
+            "name": "id_produit",
+            "dataType": "string",
+            "sourceColumn": "id_produit",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "nom_produit",
+            "dataType": "string",
+            "sourceColumn": "nom_produit",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "categorie",
+            "dataType": "string",
+            "sourceColumn": "categorie",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "sous_categorie",
+            "dataType": "string",
+            "sourceColumn": "sous_categorie",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Produit",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Produit].*   FROM [dbo].[Dim_Produit] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Produit].*   FROM [dbo].[Dim_Produit] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Produit"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Temps",
+        "columns": [
+          {
+            "name": "id_date",
+            "dataType": "string",
+            "sourceColumn": "id_date",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "année",
+            "dataType": "int64",
+            "sourceColumn": "année",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "mois",
+            "dataType": "string",
+            "sourceColumn": "mois",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "jour",
+            "dataType": "int64",
+            "sourceColumn": "jour",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Temps",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Temps].*   FROM [dbo].[Dim_Temps] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Temps].*   FROM [dbo].[Dim_Temps] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Temps"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Faits_Ventes",
+        "columns": [
+          {
+            "name": "id_ligne",
+            "dataType": "int64",
+            "sourceColumn": "id_ligne",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_commande",
+            "dataType": "string",
+            "sourceColumn": "id_commande",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "id_client",
+            "dataType": "string",
+            "sourceColumn": "id_client",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "id_produit",
+            "dataType": "string",
+            "sourceColumn": "id_produit",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "date_commande",
+            "dataType": "string",
+            "sourceColumn": "date_commande",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "ventes",
+            "dataType": "int64",
+            "sourceColumn": "ventes",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Délai_Livraison",
+            "dataType": "int64",
+            "sourceColumn": "Délai_Livraison",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_lieu",
+            "dataType": "int64",
+            "sourceColumn": "id_lieu",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Faits_Ventes",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Faits_Ventes].*   FROM [dbo].[Faits_Ventes] ",
+              "dataSource": "SqlServer JUST_BEMKAJUST_BEMKA test_ssas"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total_Ventes",
+            "expression": " SUM(Faits_Ventes[ventes])"
+          },
+          {
+            "name": "Nb_Commandes",
+            "expression": " DISTINCTCOUNT(Faits_Ventes[id_commande])"
+          },
+          {
+            "name": "Clients_Actifs",
+            "expression": " DISTINCTCOUNT(Faits_Ventes[id_client])"
+          },
+          {
+            "name": "Delai_Livraison_Moyen",
+            "expression": " AVERAGE(Faits_Ventes[Délai_Livraison])"
+          },
+          {
+            "name": "Ventes_Moyennes_Commande",
+            "expression": " DIVIDE([Total_Ventes], [Nb_Commandes])"
+          },
+          {
+            "name": "Part_Marche_Segment",
+            "expression": [
+              " ",
+              "DIVIDE(",
+              "    CALCULATE([Total_Ventes], Dim_Client[segment_client] = \"SegmentX\"),",
+              "    [Total_Ventes]",
+              ")"
+            ]
+          },
+          {
+            "name": "Livraison_Retard",
+            "expression": [
+              " ",
+              "DIVIDE(",
+              "  CALCULATE(COUNTROWS(Faits_Ventes), Faits_Ventes[Délai_Livraison] > 3),",
+              "  COUNTROWS(Faits_Ventes)",
+              ")"
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Faits_Ventes].*   FROM [dbo].[Faits_Ventes] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Faits_Ventes"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "851e02be-8ce5-4f78-ba8d-6da916ed881b",
+        "fromTable": "Faits_Ventes",
+        "fromColumn": "id_lieu",
+        "toTable": "Dim_Lieu",
+        "toColumn": "id_lieu",
+        "isActive": false
+      },
+      {
+        "name": "d1ba5cbb-5f1c-439f-8dee-5d15899c4c24",
+        "fromTable": "Dim_Client",
+        "fromColumn": "id_lieu",
+        "toTable": "Dim_Lieu",
+        "toColumn": "id_lieu"
+      },
+      {
+        "name": "3cb37d06-67a7-4ac6-a1fa-00603b2fdf30",
+        "fromTable": "Faits_Ventes",
+        "fromColumn": "id_client",
+        "toTable": "Dim_Client",
+        "toColumn": "id_client"
+      },
+      {
+        "name": "db4852ed-e4eb-4d26-9e1e-f1cc63bda363",
+        "fromTable": "Faits_Ventes",
+        "fromColumn": "id_commande",
+        "toTable": "Dim_Commande",
+        "toColumn": "id_commande"
+      },
+      {
+        "name": "aeb9af80-c1e0-4a33-945b-0dbd1bed7f88",
+        "fromTable": "Faits_Ventes",
+        "fromColumn": "id_produit",
+        "toTable": "Dim_Produit",
+        "toColumn": "id_produit"
+      },
+      {
+        "name": "480542b5-e3ea-4c3e-a832-70ff0b0eb1af",
+        "fromTable": "Faits_Ventes",
+        "fromColumn": "date_commande",
+        "toTable": "Dim_Temps",
+        "toColumn": "id_date"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  }
+}
